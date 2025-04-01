@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "100xtemplates-core",
   "private": true,
   "scripts": {
     "build": "turbo run build",
