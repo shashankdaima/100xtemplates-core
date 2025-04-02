@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 
-const TemplateLanding = () => {
+const TemplateLanding = ({ subtitle }: { subtitle: string }) => {
   return (
     <section className="relative overflow-hidden py-32">
       <div className="absolute inset-x-0 top-0 flex h-full w-full items-center justify-center opacity-100">
@@ -27,12 +27,10 @@ const TemplateLanding = () => {
             <div>
               <h1 className="mb-6 text-2xl font-bold tracking-tight text-pretty lg:text-5xl">
                 Build your next project with{" "}
-                <span className="text-primary">Blocks</span>
+                <span className="text-primary underline">100x Templates</span>
               </h1>
               <p className="mx-auto max-w-3xl text-muted-foreground lg:text-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-                doloremque mollitia fugiat omnis! Porro facilis quo animi
-                consequatur. Explicabo.
+                {subtitle}
               </p>
             </div>
             <div className="mt-6 flex justify-center gap-3">

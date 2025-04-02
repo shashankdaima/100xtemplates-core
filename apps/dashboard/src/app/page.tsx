@@ -16,7 +16,7 @@ import TemplateLanding from "@repo/ui/components/template-landing";
 export default function Home() {
   return (
     <>
-      <TemplateLanding />
+      <TemplateLanding subtitle="This is Nextjs(App Router) template with Shadcn/UI and Tailwind CSS" />
     </>
   );
 }
