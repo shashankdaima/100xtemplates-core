@@ -4,7 +4,8 @@
   "private": true,
   "exports": {
     "./*": "./src/*.tsx",
-    "./tailwind-config": "./tailwind-config.ts"
+    "./tailwind-config": "./tailwind-config.ts",
+    "./styles": "./src/styles/globals.css"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -22,6 +23,7 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -29,6 +31,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwind-merge": "^3.1.0",
+    "tailwindcss-animate": "^1.0.7",
     "tw-animate-css": "^1.2.5"
   }
 }
