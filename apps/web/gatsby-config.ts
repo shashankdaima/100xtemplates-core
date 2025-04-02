@@ -12,6 +12,7 @@ const config: GatsbyConfig = {
         modules: [`@repo/ui`],
       },
     },
+    'gatsby-plugin-postcss',
   ],
 };
 

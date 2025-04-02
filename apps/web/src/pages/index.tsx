@@ -5,8 +5,9 @@ import type { HeadProps, PageProps } from "gatsby";
 function IndexPage(_: PageProps): JSX.Element {
   return (
     <main>
-      <h1>Web</h1>
-      {/* <Button /> */}
+      <h1 className="text-3xl text-red-500 font-bold underline">
+        Hello world!
+      </h1>
     </main>
   );
 }
