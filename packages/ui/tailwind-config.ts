@@ -1,8 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"],
-  content: [],
+  content: [
+    "./apps/dashboard/src/**/*.{js,ts,jsx,tsx}",
+    "./packages/ui/src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     container: {
       center: true,
