@@ -1,11 +1,11 @@
-import { Button } from "@repo/ui/button";
+import { Badge } from "@repo/ui/ui/badge";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
       <h1>Hello World</h1>
-      <Button appName="Dashboard">Click me</Button>
+      <Badge>Click me</Badge>
     </div>
   );
 }
