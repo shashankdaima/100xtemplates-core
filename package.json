@@ -14,7 +14,8 @@
     "py:lint": "uv run black . && uv run isort . && uv run mypy . && uv run ruff .",
     "py:format": "uv run black . && uv run isort .",
     "py:check": "uv run ruff .",
-    "py:clean": "rm -rf .venv"
+    "py:clean": "rm -rf .venv",
+    "tree:generate": "tree -I 'node_modules|.venv|.turbo' > tree.txt"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
