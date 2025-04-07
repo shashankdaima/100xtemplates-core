@@ -7,6 +7,15 @@ app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
 
+app.get('/health', (c) => {
+  return c.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    service: 'api-hono'
+  })
+})
+
+
 serve({
   fetch: app.fetch,
   port: 8002
