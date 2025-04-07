@@ -1,84 +1,145 @@
-# Turborepo starter
+# 100xtemplates-core
 
-This Turborepo starter is maintained by the Turborepo core team.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+A modern monorepo template combining Next.js and FastAPI applications with Turborepo-like structure.
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+This monorepo includes the following packages/apps:
 
-### Apps and Packages
+### Apps
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
+- `docs`: a [Next.js](https://nextjs.org/) documentation app
+- `web`: another [Next.js](https://nextjs.org/) web application
+- `fastapi-app`: a [FastAPI](https://fastapi.tiangolo.com/) backend application
+
+### Packages
+
+#### JavaScript/TypeScript
+- `@repo/ui`: a React component library shared by both `web` and `docs` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+#### Python
+- `packages-py`: Python packages shared across FastAPI applications
 
-### Utilities
+## Prerequisites
 
-This Turborepo has some additional tools already setup for you:
+- Node.js >= 18
+- Python >= 3.9
+- [uv](https://github.com/astral-sh/uv) (Python package manager)
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+## Quick Start
 
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+1. Clone the repository:
+```bash
+git clone https://github.com/your-org/100xtemplates-core.git
+cd 100xtemplates-core
 ```
 
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+2. Install Node.js dependencies:
+```bash
+npm install
 ```
 
-### Remote Caching
+3. Initialize Python environment:
+```bash
+npm run py:init
+```
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+4. Start development servers:
+```bash
+# Start all services
+npm run dev
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+# Or start specific services
+npm run dev -- --filter=web
+npm run dev -- --filter=docs
+npm run py:dev
+```
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+## Development
+
+### JavaScript/TypeScript Development
+
+- `npm run build` - Build all apps and packages
+- `npm run dev` - Develop all apps and packages
+- `npm run lint` - Lint all code
+- `npm run format` - Format all code
+
+### Python Development
+
+- `npm run py:init` - Initialize Python virtual environment and install dependencies
+- `npm run py:dev` - Start FastAPI development server with hot reload
+- `npm run py:build` - Install/update Python dependencies
+- `npm run py:test` - Run Python tests
+- `npm run py:lint` - Run all Python linting tools
+- `npm run py:format` - Format Python code
+- `npm run py:check` - Run Ruff checks
+- `npm run py:clean` - Remove Python virtual environment
+
+## Project Structure
 
 ```
-cd my-turborepo
+.
+├── apps/
+│   ├── api-hono/      # Hono API server
+│   ├── dashboard/     # Next.js dashboard app
+│   ├── fastapi-app/   # FastAPI backend app
+│   └── web/           # Gatsby web app
+├── packages/
+│   ├── auth/          # Authentication utilities
+│   ├── db/            # Database utilities
+│   ├── ui/            # Shared React components
+│   ├── eslint-config/ # ESLint configurations
+│   └── typescript-config/ # TypeScript configurations
+├── packages-py/       # Shared Python packages
+├── deployments/       # Deployment configurations
+├── k8s/               # Kubernetes configurations
+├── pyproject.toml     # Python project configuration
+└── package.json       # Node.js project configuration
+```
+
+## Next Steps
+
+1. **Configure Environment Variables**
+   - Create `.env` files for each app
+   - Set up database connections and API keys
+
+2. **Set Up Database**
+   - Configure SQLAlchemy models in `fastapi-app`
+   - Set up Alembic migrations
+
+3. **Add Authentication**
+   - Implement JWT or OAuth2 authentication
+   - Set up protected routes
+
+4. **Add API Documentation**
+   - Configure FastAPI OpenAPI documentation
+   - Add API examples and descriptions
+
+5. **Set Up CI/CD**
+   - Configure GitHub Actions or similar
+   - Set up automated testing and deployment
+
+6. **Add Monitoring**
+   - Set up logging
+   - Configure error tracking
+   - Add performance monitoring
+
+## Remote Caching
+
+Turborepo can use [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines.
+
+To enable Remote Caching:
+
+```bash
 npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
 npx turbo link
 ```
 
 ## Useful Links
 
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- [Turborepo Documentation](https://turbo.build/repo/docs)
+- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [uv Documentation](https://github.com/astral-sh/uv)

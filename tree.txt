@@ -1,0 +1,128 @@
+.
+├── README.md
+├── apps
+│   ├── __init__.py
+│   ├── api-hono
+│   │   ├── README.md
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   └── index.ts
+│   │   └── tsconfig.json
+│   ├── dashboard
+│   │   ├── README.md
+│   │   ├── eslint.config.mjs
+│   │   ├── next-env.d.ts
+│   │   ├── next.config.ts
+│   │   ├── package.json
+│   │   ├── postcss.config.mjs
+│   │   ├── public
+│   │   │   ├── file.svg
+│   │   │   ├── globe.svg
+│   │   │   ├── next.svg
+│   │   │   ├── vercel.svg
+│   │   │   └── window.svg
+│   │   ├── src
+│   │   │   └── app
+│   │   │       ├── favicon.ico
+│   │   │       ├── globals.css
+│   │   │       ├── layout.tsx
+│   │   │       └── page.tsx
+│   │   ├── tailwind.config.ts
+│   │   └── tsconfig.json
+│   ├── fastapi-app
+│   │   ├── Dockerfile
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   └── main.cpython-312.pyc
+│   │   └── main.py
+│   └── web
+│       ├── README.md
+│       ├── gatsby-browser.js
+│       ├── gatsby-config.ts
+│       ├── package.json
+│       ├── postcss.config.js
+│       ├── public
+│       │   ├── page-data
+│       │   │   ├── 404.html
+│       │   │   │   └── page-data.json
+│       │   │   ├── dev-404-page
+│       │   │   │   └── page-data.json
+│       │   │   └── index
+│       │   │       └── page-data.json
+│       │   ├── static
+│       │   └── ~partytown
+│       │       ├── debug
+│       │       │   ├── partytown-atomics.js
+│       │       │   ├── partytown-media.js
+│       │       │   ├── partytown-sandbox-sw.js
+│       │       │   ├── partytown-sw.js
+│       │       │   ├── partytown-ww-atomics.js
+│       │       │   ├── partytown-ww-sw.js
+│       │       │   └── partytown.js
+│       │       ├── partytown-atomics.js
+│       │       ├── partytown-media.js
+│       │       ├── partytown-sw.js
+│       │       └── partytown.js
+│       ├── src
+│       │   ├── gatsby-types.d.ts
+│       │   ├── pages
+│       │   │   ├── 404.tsx
+│       │   │   └── index.tsx
+│       │   ├── styles
+│       │   │   └── global.css
+│       │   └── utils
+│       │       └── cn.tsx
+│       ├── tailwind.config.js
+│       ├── tsconfig.json
+│       └── turbo.json
+├── deployments
+├── k8s
+├── package-lock.json
+├── package.json
+├── packages
+│   ├── auth
+│   ├── db
+│   ├── eslint-config
+│   │   ├── README.md
+│   │   ├── base.js
+│   │   ├── gatsby.js
+│   │   ├── library.js
+│   │   ├── next.js
+│   │   ├── package.json
+│   │   └── react-internal.js
+│   ├── typescript-config
+│   │   ├── base.json
+│   │   ├── gatsby.json
+│   │   ├── nextjs.json
+│   │   ├── package.json
+│   │   └── react-library.json
+│   └── ui
+│       ├── components.json
+│       ├── eslint.config.mjs
+│       ├── package.json
+│       ├── src
+│       │   ├── components
+│       │   │   ├── template-landing.tsx
+│       │   │   └── ui
+│       │   │       ├── badge.tsx
+│       │   │       ├── button.tsx
+│       │   │       └── dialog.tsx
+│       │   ├── lib
+│       │   │   └── utils.ts
+│       │   └── styles
+│       │       └── globals.css
+│       ├── tailwind-config.ts
+│       ├── tsconfig.json
+│       └── turbo
+│           └── generators
+│               ├── config.ts
+│               └── templates
+│                   └── component.hbs
+├── packages-py
+│   └── __init__.py
+├── pyproject.toml
+├── tree.txt
+├── turbo.json
+└── uv.lock
+
+40 directories, 86 files
