@@ -8,9 +8,10 @@ This monorepo includes the following packages/apps:
 
 ### Apps
 
-- `docs`: a [Next.js](https://nextjs.org/) documentation app
-- `web`: another [Next.js](https://nextjs.org/) web application
-- `fastapi-app`: a [FastAPI](https://fastapi.tiangolo.com/) backend application
+- `dashboard`: a [Next.js](https://nextjs.org/) app for the main dashboard
+- `web`: a [Gatsby](https://www.gatsbyjs.com/) app for the landing page
+- `api-hono`: a [Hono](https://hono.dev/) API server
+- `fastapi-app`: a [FastAPI](https://fastapi.tiangolo.com/) backend for AI functionality
 
 ### Packages
 
@@ -94,7 +95,7 @@ npm run py:dev
 │   └── typescript-config/ # TypeScript configurations
 ├── packages-py/       # Shared Python packages
 ├── deployments/       # Deployment configurations
-├── k8s/               # Kubernetes configurations
+├── docker/            # Docker configurations
 ├── pyproject.toml     # Python project configuration
 └── package.json       # Node.js project configuration
 ```
