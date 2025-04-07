@@ -5,8 +5,16 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\" && uv run black . && uv run isort .",
+    "check-types": "turbo run check-types",
+    "py:init": "uv venv && uv pip install -e .",
+    "py:dev": "cd apps/fastapi-app && uv run uvicorn main:app --reload --host 0.0.0.0 --port 5000",
+    "py:build": "uv pip install -e .",
+    "py:test": "uv run pytest",
+    "py:lint": "uv run black . && uv run isort . && uv run mypy . && uv run ruff .",
+    "py:format": "uv run black . && uv run isort .",
+    "py:check": "uv run ruff .",
+    "py:clean": "rm -rf .venv"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
@@ -19,6 +27,7 @@
   "packageManager": "npm@10.8.2",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "packages-py/*"
   ]
 }
